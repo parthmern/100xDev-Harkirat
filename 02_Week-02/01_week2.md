@@ -31,3 +31,9 @@ git checkout -b my-feature
 - now the admin can review it and then can merge it
 
 
+## git merge conflict
+![image-45](https://github.com/parthmern/100xDev-Harkirat/assets/125397720/6e06302c-5fec-4288-ae65-6d3d90fbbcfa)
+
+- it happens when one user do some changes in one branch then push it and at the same time when another user is already working on that same branch do some changes and then try to push code that time conflict arise
+
+
