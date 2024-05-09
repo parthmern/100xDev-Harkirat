@@ -36,4 +36,14 @@ git checkout -b my-feature
 
 - it happens when one user do some changes in one branch then push it and at the same time when another user is already working on that same branch do some changes and then try to push code that time conflict arise
 
+- while merging branch that issue of conflict happens
+- `git log --merge` shows the conflicts that are available
+- open that conflicted file and try to solve it and remove
 
+- 
+
+- here above img remove `<<<< HEAD` line
+- remove `========` line
+- remove `>>>>>> BRANCHNAME` line
+- to solve conflict issue and then try to push it
+- we can also sovle it by vs code feature 
