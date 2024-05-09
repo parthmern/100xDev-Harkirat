@@ -18,3 +18,16 @@ git checkout -b my-feature
 
 ```
 
+- after that i am moving to feature branch and then doing some changes in files and then do commit
+- so here the changes that we have made were not reflected on "main" branch that are only done in "feature" branch
+- so **how to look differances between this two branches** so firstly go to main branch then `git diff <featureBranchName>` 
+- so if i want to merge this 2 branch then there is easy way of like go to main branch and then run command like `git merge <featureBranchName>` to merge two brach
+
+<br />
+
+- do like professional way by creating PR - Pull Request
+- firstly switch to "feature" branch then push the thing 
+- that push creates the PR - pull req on github
+- now the admin can review it and then can merge it
+
+
