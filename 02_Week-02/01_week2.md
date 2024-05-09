@@ -40,7 +40,8 @@ git checkout -b my-feature
 - `git log --merge` shows the conflicts that are available
 - open that conflicted file and try to solve it and remove
 
-- 
+- ![merge-conflict](https://github.com/parthmern/100xDev-Harkirat/assets/125397720/2e599d7b-086f-43b2-be9a-1a3904ec9489)
+
 
 - here above img remove `<<<< HEAD` line
 - remove `========` line
