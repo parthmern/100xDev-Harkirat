@@ -31,3 +31,18 @@ app.post("/test", (req, res) => {
 app.listen(3000, () => {
   console.log("server started");
 });
+
+// =======================================
+// {
+//   email : "qpmzj@example.com" ,
+//   password : "string" , 
+//   country : "IN", "US",
+// }
+
+const zodSchema = zod.object(
+  {
+    email : zod.string() ,
+    password : zod.string() ,
+    country : zod.string().enum(["IN", "US"]) ,
+  }
+)
