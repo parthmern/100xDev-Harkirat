@@ -62,28 +62,33 @@ Both `setTimeout` and `setInterval` return a unique identifier (a numeric ID) th
 
 You can use `setTimeout` and `setInterval` inside component methods such as `componentDidMount`, `componentDidUpdate`, or `componentWillUnmount`.
 
-```javascript
-import React, { Component } from 'react';
+```
+import React, { useState, useEffect } from 'react';
 
-class MyComponent extends Component {
-    componentDidMount() {
+function MyComponent() {
+    useEffect(() => {
         // Executing after 2 seconds
-        setTimeout(() => {
+        const delayedMessageTimer = setTimeout(() => {
             console.log('Delayed message');
         }, 2000);
-    }
 
-    componentWillUnmount() {
-        // Clearing the timeout to avoid memory leaks
-        clearTimeout(this.timer);
-    }
+        // Executing every 1 second
+        const repeatedMessageInterval = setInterval(() => {
+            console.log('Repeated message');
+        }, 1000);
 
-    render() {
-        return <div>My Component</div>;
-    }
+        return () => {
+            // Clearing the timeout and interval to avoid memory leaks
+            clearTimeout(delayedMessageTimer);
+            clearInterval(repeatedMessageInterval);
+        };
+    }, []); // Empty dependency array to run effect only once
+
+    return <div>My Component</div>;
 }
 
 export default MyComponent;
+
 ```
 
 ### Using Hooks (for Functional Components):
