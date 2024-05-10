@@ -3,6 +3,8 @@ const app = express();
 
 app.use(express.json());
 
+// all this functions with routes always have NEXT function (req, res, next) is still present here 
+// so if there is error then it can go directly on global catch function using next function 
 app.post("/test", (req, res)=>{
     //const kidney = [ 1, 2 ];
 
