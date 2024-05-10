@@ -62,7 +62,7 @@ Both `setTimeout` and `setInterval` return a unique identifier (a numeric ID) th
 
 You can use `setTimeout` and `setInterval` inside component methods such as `componentDidMount`, `componentDidUpdate`, or `componentWillUnmount`.
 
-```
+```javascript
 import React, { useState, useEffect } from 'react';
 
 function MyComponent() {
