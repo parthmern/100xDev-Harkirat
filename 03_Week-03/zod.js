@@ -18,6 +18,11 @@ app.post("/test", (req, res) => {
   const zodResponseSafeParse = schema.safeParse(kidney);
   const zodResponseParse = schema.parse(kidney);
 
+  if(!zodResponseSafeParse.success){
+  
+    res.status(400).send("you sent wrong input");
+  }
+
   const kidneyLength = kidney.length;
 
   res.status(200).json({message : "you have " + kidneyLength + " kidneys" , zodResponseSafeParse, zodResponseParse} );
