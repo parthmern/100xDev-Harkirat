@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import "./App.css";
 import { useRecoilState, useRecoilValue } from "recoil";
-import { msgAtom, notiAtom } from "./atoms";
+import { msgAtom, notiAtom, totalSelector } from "./atoms";
 
 function App() {
 
@@ -11,6 +11,17 @@ function App() {
   // ATOMS like useState
   const msgCount = useRecoilValue(msgAtom);  // this is only for getting value
   const [notiCount, setNotiCount] = useRecoilState(notiAtom); // this is same as useState
+  // const setNotiCount = useRecoilValue(notiAtom); // just getting setter function not the value
+
+  // =======================================================================================
+  // using useMemo because on every render we donot need to call this function
+  // const total = useMemo(()=>{
+  //   return (msgCount + notiCount) ;
+  // }, [msgCount, notiCount]);
+
+    const total = useRecoilValue(totalSelector);
+
+
 
   return (
     <div className="flex items-center justify-center h-[50vh] gap-x-5">
@@ -19,6 +30,8 @@ function App() {
       <button onClick={()=>{
         setNotiCount( (prev) => prev+1 ) ;
       }}  className="border">notifications : {notiCount} </button>
+
+      <button>total : {total} </button>
 
     </div>
   );
