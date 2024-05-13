@@ -1,4 +1,4 @@
-import {atom, selector} from "recoil";
+import {atom, atomFamily, selector} from "recoil";
 import axios from "axios";
 
 // =====================================================
@@ -55,3 +55,38 @@ export const asyncLogicalSelector = selector(
 )
 // problem with above is that the screen will be the white until this function is completed execution 
 // what if it takes 20-30 seconds to get the data 
+
+// ============================================================================================
+// ============================================================================================
+// ============================================================================================
+
+const TODOS = [
+    {
+        id : 1 ,
+        title : "first" ,
+    },
+    {
+        id : 2 ,
+        title : "second" ,
+    },
+    {
+        id : 3 ,
+        title : "third" ,
+    },
+    {
+        id : 4 ,
+        title : "fourth" ,
+    }
+];
+
+export const todosAtomFamily = atomFamily(
+    {
+        default : "todosAtomFamily" ,
+        default : function matchingId(id) {
+            let foundTodo = TODOS.find( (x)=>x.id == id ) ;
+            return (foundTodo) ;
+        }
+    }
+)
+
+// atom1 , atom2, atom3 ,...... here we are creating atoms using id
