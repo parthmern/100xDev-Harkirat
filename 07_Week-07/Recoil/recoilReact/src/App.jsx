@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import "./App.css";
 import { useRecoilState, useRecoilValue } from "recoil";
-import { asyncLogicalSelector, msgAtom, notiAtom, objectAtom, todosAtomFamily, totalSelector } from "./atoms";
+import { asyncLogicalSelector, asyncTodosAtomFamily, msgAtom, notiAtom, objectAtom, todosAtomFamily, totalSelector } from "./atoms";
 
 function App() {
 
@@ -34,6 +34,8 @@ function App() {
   const currentTodo = useRecoilValue(todosAtomFamily(2));    // sending ID as 2
   console.log(currentTodo);
 
+  const asyncTodo = useRecoilValue(asyncTodosAtomFamily(3));
+  console.log("asyncTodo=>", asyncTodo);
 
 
   return (
@@ -50,6 +52,7 @@ function App() {
       <br />
 
       <div>atom family : {currentTodo.title} </div>
+      <div>async todo : {asyncTodo?.title}</div>
 
     </div>
   );

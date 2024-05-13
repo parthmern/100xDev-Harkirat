@@ -1,4 +1,4 @@
-import {atom, atomFamily, selector} from "recoil";
+import {atom, atomFamily, selector, selectorFamily} from "recoil";
 import axios from "axios";
 
 // =====================================================
@@ -81,7 +81,7 @@ const TODOS = [
 
 export const todosAtomFamily = atomFamily(
     {
-        default : "todosAtomFamily" ,
+        key : "todosAtomFamily" ,
         default : function matchingId(id) {
             let foundTodo = TODOS.find( (x)=>x.id == id ) ;
             return (foundTodo) ;
@@ -90,3 +90,20 @@ export const todosAtomFamily = atomFamily(
 )
 
 // atom1 , atom2, atom3 ,...... here we are creating atoms using id
+
+export const asyncTodosAtomFamily = atomFamily(
+    {
+        key : "asyncTodosAtomFamily",
+        default : selectorFamily(
+            {
+                key : "todosSelectorFamilys" ,
+                get : (id) => async ({get}) => {
+                    console.log(id);
+                    const res = await axios.get(`https://sum-server.100xdevs.com/todos?id=${id}`);
+                    console.log(res.data.todos[id-1]);
+                    return(res.data.todos[id-1])
+                }
+            }
+        )
+    }
+)
