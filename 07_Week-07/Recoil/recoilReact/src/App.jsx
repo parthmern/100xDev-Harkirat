@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import "./App.css";
-import { useRecoilState, useRecoilValue } from "recoil";
+import { useRecoilState, useRecoilValue, useRecoilValueLoadable } from "recoil";
 import { asyncLogicalSelector, asyncTodosAtomFamily, msgAtom, notiAtom, objectAtom, todosAtomFamily, totalSelector } from "./atoms";
 
 function App() {
@@ -36,6 +36,9 @@ function App() {
 
   const asyncTodo = useRecoilValue(asyncTodosAtomFamily(3));
   console.log("asyncTodo=>", asyncTodo);
+
+  const asyncTodoLoader = useRecoilValueLoadable(asyncTodosAtomFamily(3)); 
+  console.log("asyncTodo=>", asyncTodoLoader); // it gives function so we can access asyncTodoLoader?.state = "loading" or "hasValue" to do other things
 
 
   return (

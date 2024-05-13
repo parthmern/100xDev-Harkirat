@@ -100,10 +100,15 @@ export const asyncTodosAtomFamily = atomFamily(
                 get : (id) => async ({get}) => {
                     console.log(id);
                     const res = await axios.get(`https://sum-server.100xdevs.com/todos?id=${id}`);
-                    console.log(res.data.todos[id-1]);
-                    return(res.data.todos[id-1])
+                    console.log(res?.data);
+                    console.log(res?.data?.todos[id-1]);
+                    return(res?.data?.todos[id-1])
                 }
             }
         )
     }
 )
+
+// problem with above is that the screen will be the white until this function is completed execution 
+// what if it takes 20-30 seconds to get the data 
+// useRecoilStateLoadable and use RecoilValueLoadable << 
