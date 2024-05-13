@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import "./App.css";
-import { useRecoilState, useRecoilValue, useRecoilValueLoadable } from "recoil";
+import { useRecoilState, useRecoilStateLoadable, useRecoilValue, useRecoilValueLoadable } from "recoil";
 import { asyncLogicalSelector, asyncTodosAtomFamily, msgAtom, notiAtom, objectAtom, todosAtomFamily, totalSelector } from "./atoms";
 
 function App() {
@@ -39,7 +39,8 @@ function App() {
 
   const asyncTodoLoader = useRecoilValueLoadable(asyncTodosAtomFamily(2)); 
   console.log("asyncTodoLoader=>", asyncTodoLoader); // it gives function so we can access asyncTodoLoader?.state = "loading" or "hasValue" to do other things
-
+  // same like this for >>>>> useRecoilStateLoadable
+  
 
   return (
     <div className="flex items-center justify-center h-[50vh] gap-x-5">
