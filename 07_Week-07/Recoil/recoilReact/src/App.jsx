@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import "./App.css";
 import { useRecoilState, useRecoilValue } from "recoil";
-import { msgAtom, notiAtom, totalSelector } from "./atoms";
+import { asyncLogicalSelector, msgAtom, notiAtom, objectAtom, totalSelector } from "./atoms";
 
 function App() {
 
@@ -11,6 +11,8 @@ function App() {
   // ATOMS like useState
   const msgCount = useRecoilValue(msgAtom);  // this is only for getting value
   const [notiCount, setNotiCount] = useRecoilState(notiAtom); // this is same as useState
+  const objectCount = useRecoilValue(objectAtom); 
+  console.log("object atom =>", objectCount);
   // const setNotiCount = useRecoilValue(notiAtom); // just getting setter function not the value
 
   // =======================================================================================
@@ -19,7 +21,11 @@ function App() {
   //   return (msgCount + notiCount) ;
   // }, [msgCount, notiCount]);
 
-    const total = useRecoilValue(totalSelector);
+  const total = useRecoilValue(totalSelector);
+
+  const asyncAns = useRecoilValue(asyncLogicalSelector);
+  console.log(asyncAns);
+  
 
 
 
