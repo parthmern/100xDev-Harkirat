@@ -37,8 +37,8 @@ function App() {
   const asyncTodo = useRecoilValue(asyncTodosAtomFamily(3));
   console.log("asyncTodo=>", asyncTodo);
 
-  const asyncTodoLoader = useRecoilValueLoadable(asyncTodosAtomFamily(3)); 
-  console.log("asyncTodo=>", asyncTodoLoader); // it gives function so we can access asyncTodoLoader?.state = "loading" or "hasValue" to do other things
+  const asyncTodoLoader = useRecoilValueLoadable(asyncTodosAtomFamily(2)); 
+  console.log("asyncTodoLoader=>", asyncTodoLoader); // it gives function so we can access asyncTodoLoader?.state = "loading" or "hasValue" to do other things
 
 
   return (
@@ -55,7 +55,7 @@ function App() {
       <br />
 
       <div>atom family : {currentTodo.title} </div>
-      <div>async todo : {asyncTodo?.title}</div>
+      <div>async todo : {asyncTodoLoader?.state=="loading" ? "loading.." : asyncTodoLoader?.contents?.title}</div>
 
     </div>
   );

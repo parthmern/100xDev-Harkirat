@@ -99,6 +99,7 @@ export const asyncTodosAtomFamily = atomFamily(
                 key : "todosSelectorFamilys" ,
                 get : (id) => async ({get}) => {
                     console.log(id);
+                    await new Promise(r => setTimeout(r, 5000));
                     const res = await axios.get(`https://sum-server.100xdevs.com/todos?id=${id}`);
                     console.log(res?.data);
                     console.log(res?.data?.todos[id-1]);
