@@ -1,4 +1,4 @@
-### custom Hook 
+## custom Hook 
 
 ### What are hooks ? 
 - Hooks are a feature introduced in React 16.8 that allow you to use state and other React features without writing a class. They are functions that let you "hook into" React state and lifecycle features from function components.
