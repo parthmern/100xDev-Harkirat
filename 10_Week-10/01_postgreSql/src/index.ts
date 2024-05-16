@@ -99,3 +99,4 @@ fetchDataOfUser("parth@gmail.com").then((data)=>{
 }).catch(()=>{
     console.log("error in gotUser");
 })
+
