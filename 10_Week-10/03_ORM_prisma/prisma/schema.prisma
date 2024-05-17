@@ -1,0 +1,46 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = "postgresql://test_owner:ZDh52OKkGqFw@ep-dry-hill-a5nfk1xt.us-east-2.aws.neon.tech/test?sslmode=require"
+}
+
+// CREATE TABLE "User" (
+//     id SERIAL PRIMARY KEY,
+//     email TEXT NOT NULL,
+//     firstName TEXT,
+//     lastName TEXT,
+//     password TEXT NOT NULL
+// );
+
+model User {
+  id  Int @id @default(autoincrement())
+  email String
+  firstName String ?
+  lastName String ?
+  password String 
+}
+
+// CREATE TABLE "Todo" (
+//     id SERIAL PRIMARY KEY,
+//     title TEXT NOT NULL,
+//     done BOOLEAN DEFAULT FALSE,
+//     description TEXT,
+//     userId INT NOT NULL
+// );
+
+model Todo {
+  id Int @id @default(autoincrement())
+  title String 
+  done Boolean @default(false)
+  description String ?
+  userId Int
+}

@@ -1,0 +1,19 @@
+{
+  "name": "03_orm_prisma",
+  "version": "1.0.0",
+  "description": "- ORM stands for Object-Relational Mapping. It's a way to make it easier for developers to work with databases in their code. Instead of writing complex database queries, they can use simple commands in their programming language.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^5.14.0",
+    "@types/node": "^20.12.12",
+    "prisma": "^5.14.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}
