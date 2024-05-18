@@ -40,7 +40,7 @@ async function insertUser(username: string, password: string, firstName: string,
 }
 
 
-insertUser("admin2", "789456", "dhruv", "patel");
+//insertUser("admin1", "12345", "parth", "patel");
 
 async function gettingAllUser(){
     const res = await prisma.user.findMany({
@@ -55,4 +55,35 @@ async function gettingAllUser(){
       console.log("all users ==>", res);
 }
 
+
+// =================
+interface UpdateParams {
+    firstName: string;
+    lastName: string;
+}
+
+async function updateUser(username: string, { firstName, lastName }: UpdateParams) {
+    const res = await prisma.user.update({
+        // here email should be @unique in mode so that there is not error while using "where"
+        where: {
+            email: username , // Here, email is used to find the user
+        } ,
+        data: {
+            firstName: firstName,
+            lastName: lastName,
+        },
+        select: {
+            id: true,
+            email: true,
+            firstName: true,
+            lastName: true,
+        }
+    });
+    console.log(res);
+}
+
+updateUser("admin1", {
+    firstName: "new name",
+    lastName: "singh"
+});
 

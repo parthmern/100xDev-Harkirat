@@ -39,7 +39,7 @@ function insertUser(username, password, firstName, lastName) {
         gettingAllUser();
     });
 }
-insertUser("admin2", "789456", "dhruv", "patel");
+//insertUser("admin1", "12345", "parth", "patel");
 function gettingAllUser() {
     return __awaiter(this, void 0, void 0, function* () {
         const res = yield prisma.user.findMany({
@@ -56,9 +56,10 @@ function gettingAllUser() {
 function updateUser(username_1, _a) {
     return __awaiter(this, arguments, void 0, function* (username, { firstName, lastName }) {
         const res = yield prisma.user.update({
+            // here email should be @unique in mode so that there is not error while using "where"
             where: {
-                email: username // Here, email is used to find the user
-            }, // Explicitly specify the type here
+                email: username, // Here, email is used to find the user
+            },
             data: {
                 firstName: firstName,
                 lastName: lastName,

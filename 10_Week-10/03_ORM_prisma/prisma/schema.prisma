@@ -23,7 +23,7 @@ datasource db {
 
 model User {
   id  Int @id @default(autoincrement())
-  email String
+  email String @unique            // to use WHERE we need to use @unique
   firstName String ?
   lastName String ?
   password String 
