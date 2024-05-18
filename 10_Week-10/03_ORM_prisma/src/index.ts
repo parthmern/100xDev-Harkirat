@@ -87,3 +87,37 @@ updateUser("admin1", {
     lastName: "singh"
 });
 
+//=======================================================================================
+// =======================================================
+// ===================================================
+
+
+// 3. Delete user
+// async function deleteUser(email: string){
+//   const res = await prisma.user.delete({
+//     where: { email: email },
+//   });
+//   console.log(res);
+// }
+
+// deleteUser('sunny@gmail.com');
+
+
+// 4. Fetch all users
+// async function fetchAllUsers(){
+//   const res = await prisma.user.findMany();
+//   console.log(res);
+// }
+
+// fetchAllUsers();
+
+
+// 5. Fetch user by email if exists else return null
+// async function fetchUserByEmail(email: string){
+//   const res = await prisma.user.findUnique({
+//     where: { email: email },
+//   });
+//   console.log(res);
+// }
+
+// fetchUserByEmail('chandan@gmail.com');
