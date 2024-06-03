@@ -12,4 +12,7 @@
 
 ## What is turbo repo ?
 
-- 
+- LEARN ABOUT IT YARN WORKSPACE, MONO REPO and TURBO REPO ( which is lib for mono repo working on yarn space)
+```
+https://youtu.be/YQLw5kJ1yrQ?si=Yfrbx5Xc-dQWhAM2
+```
