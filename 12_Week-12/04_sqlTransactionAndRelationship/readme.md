@@ -95,3 +95,12 @@ insertUserAndAddress(
 <br />
 
 - even single query is failed there and after that i am doing COMMIT and that time `ROLLBACK` happens and the reflection of whole transaction or successfull query of transaction 
+
+# JOIN
+
+```
+https://github.com/parthmern/dbms/blob/main/09_Sql%20query/joins.md
+
+https://projects.100xdevs.com/tracks/YOSAherHkqWXhOdlE4yE/sql-11
+
+```
