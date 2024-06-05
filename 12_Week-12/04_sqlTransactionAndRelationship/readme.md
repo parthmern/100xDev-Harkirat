@@ -1,6 +1,4 @@
-# Transactions in SQL
-
-## SQL Query
+# Transactions in SQL 
 
 - To ensure that both the user information and the address are inserted together or not at all, SQL transactions are used.
 
@@ -89,3 +87,11 @@ insertUserAndAddress(
 
 
 ```
+
+- here during the transaction if one query is successfully run then it will not reflect into the actual DB table
+- and after that here if second query is done successfully then it will not reflect into the actual DB table
+- and when i do COMMIT and that time it will reflect to actual DB table
+
+<br />
+
+- even single query is failed there and after that i am doing COMMIT and that time `ROLLBACK` happens and the reflection of whole transaction or successfull query of transaction 
