@@ -19,6 +19,18 @@
 
 - it is not like same code is going to work everywhere but there are only few changes in code that u can make to use the same code on above every platform
 
+# What are serverless Backends
+
+```
+piyush garg = https://youtu.be/AgOmeANl3ls?si=kpyG2QkUU0DbaP9_
+
+video = https://youtu.be/KeRhA6uhb0g?si=-SsKY_vKbcJaTp8o
+
+video = https://youtu.be/AzNA_F51o9c?si=0BRqjiVbHLSZhFGX 
+
+ex - aws lambda, google cloud platform, cloudflare workers
+```
+
 ## What is connection pulling ?
 
 - in serverless backend, different types of server/ pc is available at different places so assume that multiple PC is going to make connection with DB so there are multiple connections exists with DB.
