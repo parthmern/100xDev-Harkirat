@@ -26,7 +26,8 @@ const middleware = (req, res, next) => {
 exports.middleware = middleware;
 app.use(express_1.default.json());
 // app.use(middleware); // put it after other middleware
-app.use(requestCount_1.cleanupMiddleware);
+//app.use(cleanupMiddleware);
+app.use(requestCount_1.metricsMiddleware);
 app.get("/user", (req, res) => {
     res.send({
         name: "John Doe",

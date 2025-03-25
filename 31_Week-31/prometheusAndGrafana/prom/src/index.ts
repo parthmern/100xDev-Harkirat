@@ -5,7 +5,7 @@ import client from "prom-client";
 const app = express();
 
 import { NextFunction, Request, Response } from "express";
-import { cleanupMiddleware } from "./metrics/requestCount";
+import { metricsMiddleware } from "./metrics/requestCount";
 
 export const middleware = (req: Request, res: Response, next: NextFunction) => {
     const startTime = Date.now();
@@ -16,7 +16,8 @@ export const middleware = (req: Request, res: Response, next: NextFunction) => {
 
 app.use(express.json());
 // app.use(middleware); // put it after other middleware
-app.use(cleanupMiddleware);
+//app.use(cleanupMiddleware);
+app.use(metricsMiddleware);
 
 app.get("/user", (req, res) => {
     res.send({
